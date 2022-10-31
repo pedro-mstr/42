@@ -27,4 +27,5 @@ int			ft_isprint(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 void		ft_bzero(void *s, size_t n);
+void		*ft_memcpy(void *dst, const void *src, size_t n);
 #endif
