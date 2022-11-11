@@ -20,3 +20,14 @@ void	ft_bzero(void *s, size_t n)
 	while (n--)
 		*ptr++ = '\0';
 }
+
+
+/*#include<stdio.h>
+int main(void)
+{
+	char str[] = "123456789";
+	ft_bzero(&str, 1);
+	printf(":%c:\n", str[0]);
+	printf(":%c:\n", str[1]);
+	printf(":%c:\n", str[2]);
+}*/

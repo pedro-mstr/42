@@ -27,3 +27,16 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
+
+/*#include<stdio.h>
+int main (void) {
+	char str[] = "ABCDEF";
+    char find = 'E';
+   char *ptr;
+
+   ptr = memchr(str, find, strlen(str));
+
+   printf("String after |%c| is - |%s|\n", find, ptr);
+
+   return(0);
+}*/
