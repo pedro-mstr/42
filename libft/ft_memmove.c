@@ -14,16 +14,29 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*char_dest;
-	unsigned char	*char_src;
+	size_t	i;
 
 	if (!dest && !src)
-		return (NULL);
-	char_dest = (unsigned char *) dest;
-	char_src = (unsigned char *) src;
-	if (char_dest < char_src)
+		return (0);
+	i = 0;
+	if ((size_t)dest - (size_t)src < n)
+	{
+		i = n - 1;
+		while (i < n)
+		{
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i--;
+		}
+		return (dest);
+	}
+	else
 		return (ft_memcpy(dest, src, n));
-	while (n-- > 0)
-		char_dest[n] = char_src[n];
-	return (dest);
 }
+
+/* int main()
+20	{
+21	    char test[] = "123456789";  
+22	    ft_memmove(test + 2, test, 9);
+23	    printf("%s\n", test);
+24	    return (0);
+25	} */

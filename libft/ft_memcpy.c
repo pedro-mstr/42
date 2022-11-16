@@ -14,14 +14,23 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char		*ptr;
-	const unsigned char	*ptr2;
+	size_t	i;
 
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	ptr = (unsigned char *)dst;
-	ptr2 = (unsigned char *)src;
-	while (n-- > 0)
-		*(ptr++) = *(ptr2++);
+	if (!dst && !src)
+		return (0);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		i++;
+	}
 	return (dst);
 }
+
+/* int main()
+20	{
+21	    char test[] = "123456789";  
+22	    ft_memcpy(test + 2, test, 9);
+23	    printf("%s\n", test);
+24	    return (0);
+25	} */
