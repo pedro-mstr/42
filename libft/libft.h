@@ -50,8 +50,8 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
  */
 char		*ft_strnstr(const char *str, const char *to_find, size_t len);
 /**
- * The function ft_strchr() locates the first occurrence of c
- * (converted to a char) in the string pointed to by s.
+ * It returns a pointer to the first occurrence
+ * of the character c in the string s.
  * @param s The string to search.
  * @param c The character to search for.
  * @return A pointer to the first occurrence of the character c in the string s.
@@ -170,5 +170,28 @@ void		*ft_memchr(const void *s, int c, size_t n);
  * @return A pointer to the last occurrence of the character c in the string s.
  */
 char		*ft_strrchr(const char *s, int c);
-
+/**
+ * The function ft_memset() takes a pointer to a memory location, a value,
+ * and a number of bytes to fill, and fills the memory with the value
+ * @param b This is the pointer to the memory area to be filled.
+ * @param c The character to fill the memory with.
+ * @param len the number of bytes to be set to the value c
+ * @return The address of the first byte of the memory area b.
+ */
+void		*ft_memset(void *b, int c, size_t len);
+/**
+ * It copies the string s1 into a newly allocated string.
+ * @param s1 The string to be copied.
+ * @return A pointer to a new string which is a duplicate of the string s1.
+ */
+char		*ft_strdup(const char *s1);
+/**
+ * The function compares the first n characters of the strings s1 and s2
+ * @param s1 The first string to be compared.
+ * @param s2 The string to compare to.
+ * @param n The maximum number of characters to compare.
+ * @return The difference between the first two characters that differ
+ * in the strings s1 and s2.
+ */
+int			ft_strncmp(const char *s1, const char *s2, size_t n);
 #endif
