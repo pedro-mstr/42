@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcosta-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:26:16 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/10/27 11:26:20 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/11/19 16:33:59 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <unistd.h>
 # include <stdlib.h>
 
 /**
@@ -194,4 +195,38 @@ char		*ft_strdup(const char *s1);
  * in the strings s1 and s2.
  */
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+/**
+ * Write the character c to the file descriptor fd (0, 1, 2).
+ * @param c The character to print.
+ * @param fd File descriptor:
+ * @param 0	Standard input - keyboard.
+ * @param 1 Standard output - terminal.
+ * @param 2 Standard error (diagnostic) output.
+ */
+void		ft_putchar_fd(char c, int fd);
+/**
+ * Write the string c to the file descriptor fd (0, 1, 2).
+ * @param c The string to print.
+ * @param fd File descriptor:
+ * @param 0	Standard input - keyboard.
+ * @param 1 Standard output - terminal.
+ * @param 2 Standard error (diagnostic) output.
+ */
+void		ft_putstr_fd(char const *s, int fd);
+/**
+ * Write the string s to the file descriptor fd, followed by a newline.
+ * @param s The string to output.
+ * @param fd File descriptor:
+ * @param 0	Standard input - keyboard.
+ * @param 1 Standard output - terminal.
+ * @param 2 Standard error (diagnostic) output.
+ */
+void		ft_putendl_fd(char const *s, int fd);
+/**
+ * Iterate through the string s, passing the index and 
+ * the address of each character to the function f.
+ * @param s The string to iterate through
+ * @param f The function to be applied to each character.
+ */
+void		ft_striteri(char *s, void (*f)(unsigned int, char *));
 #endif
