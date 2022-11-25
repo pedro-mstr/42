@@ -229,4 +229,48 @@ void		ft_putendl_fd(char const *s, int fd);
  * @param f The function to be applied to each character.
  */
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));
+/**
+ * Ft_substr() returns a pointer to a new string which is a substring of t
+ * he string 's' starting at index 'start' and of length 'len'.
+ * @param s The string to be split.
+ * @param start the index of the first character to include in the substring.
+ * @param len the maximum number of characters to copy
+ * @return A pointer to a new string, or FALSE on failure, or an empty string.
+ */
+char		*ft_substr(char const *s, unsigned int start, size_t len);
+/**
+ * Applies the function f to each character of the string passed as argument
+ * by giving its index as first argument to create a “fresh” new string
+ * (with malloc(3)) resulting from the successive applications of f.
+ * @param s The string to be mapped.
+ * @param f The function to be applied to each character of s and its index.
+ * @return A pointer to a new string.
+ */
+char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+/**
+ * This function takes two strings and returns a new string 
+ * that is the concatenation of the two strings
+ * @param s1 The first string to be joined.
+ * @param s2 The string to be appended to the end of s1.
+ * @return A pointer to a new string that is the concatenation of s1 and s2.
+ */
+char		*ft_strjoin(char const *s1, char const *s2);
+/**
+ * Write the string s to the file descriptor fd
+ * @param s The string to output.
+ * @param fd The file descriptor of the file to write to.
+ */
+void		ft_putstr_fd(char const *s, int fd);
+/**
+ * Write the number n to the file descriptor fd
+ * @param n The number to be printed.
+ * @param fd The file descriptor of the file to write to.
+ */
+void		ft_putnbr_fd(int n, int fd);
+/**
+ * It takes an integer and returns a string representation of that integer
+ * @param a the number to be converted to a string
+ * @return A string of the number passed in.
+ */
+char		*ft_itoa(int a);
 #endif
