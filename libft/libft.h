@@ -6,7 +6,7 @@
 /*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:26:16 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/11/19 16:33:59 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/11/26 16:03:52 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -273,4 +273,5 @@ void		ft_putnbr_fd(int n, int fd);
  * @return A string of the number passed in.
  */
 char		*ft_itoa(int a);
+char		**ft_split(char const *s, char c);
 #endif
