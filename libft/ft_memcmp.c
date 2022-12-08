@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcosta-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:13:15 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/11/10 13:13:19 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/12/07 21:15:52 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-
-/* #include<stdio.h>
-int main(void)
-{
- char str1[] = "ABCDEFG";
- char str2[] = "ABC";
- char str3[] = "EFG";
-
- printf("%i\n", ft_memcmp(&str1, &str2, 1));
- printf("%i\n", ft_memcmp(&str1, &str3, 1));
-} */

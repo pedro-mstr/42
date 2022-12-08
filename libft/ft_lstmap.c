@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 10:06:31 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/12/07 21:10:57 by pcosta-s         ###   ########.fr       */
+/*   Created: 2022/12/07 20:39:10 by pcosta-s          #+#    #+#             */
+/*   Updated: 2022/12/08 09:22:56 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	*new_str;
-	size_t	i;
+	t_list	*temp;
+	t_list	*new_list;
 
-	i = 0;
-	new_str = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
-	if (!new_str)
-		return (NULL);
-	while (s1[i])
+	new_list = NULL;
+	temp = NULL;
+	while (lst != NULL)
 	{
-		new_str[i] = s1[i];
-		i++;
+		temp = ft_lstnew(f(lst->content));
+		if (!temp)
+		{
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&new_list, temp);
+		lst = lst->next;
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	return (new_list);
 }

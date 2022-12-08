@@ -6,7 +6,7 @@
 /*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 10:44:08 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/12/01 14:30:02 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:19:20 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_str_copy(char const *str, size_t size)
 	i = 0;
 	new_str = malloc((size + 1) * sizeof(char));
 	if (!new_str)
-		return (0);
+		return (NULL);
 	while (i < size)
 	{
 		new_str[i] = str[i];
@@ -55,11 +55,11 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	ptr_count = ft_ptr_count(s, c);
 	array_str = malloc((ptr_count + 1) * sizeof(char *));
 	if (!array_str)
-		return (0);
+		return (NULL);
 	while (*s)
 	{
 		if (*s && *s != c)
@@ -67,7 +67,7 @@ char	**ft_split(char const *s, char c)
 			i = 0;
 			while (s[i] && s[i] != c)
 				i++;
-			*(array_str++) = ft_str_copy(s, i);
+			*array_str++ = ft_str_copy(s, i);
 			s += i;
 		}
 		else
@@ -77,12 +77,24 @@ char	**ft_split(char const *s, char c)
 	return (array_str - ptr_count);
 }
 
-#include <stdio.h>
-int	main()
+/* #include <stdio.h>
+
+int	main(void)
 {
-	int		i = 0;
-	char	**array_str = ft_split("pcosta-s @ 42 Lisboa", ' ');
+	int		i;
+	char	**array_str;
+
+	i = 0;
+	array_str = ft_split("Hello 42 Lisboa!", ' ');
 	while (array_str[i])
-		printf("%s\n", array_str[i++]); 
+		printf("%s\n", array_str[i++]);
+	i = 0;
+	array_str = ft_split("Hello 42 Lisboa!", 'o');
+	while (array_str[i])
+		printf("%s\n", array_str[i++]);
+	i = 0;
+	array_str = ft_split("Hello 42 Lisboa!", 'c');
+	while (array_str[i])
+		printf("%s\n", array_str[i++]);
 	return (0);
-}
+} */

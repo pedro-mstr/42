@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcosta-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:37:40 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/10/31 12:37:43 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/12/07 21:15:57 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-/* int main()
-20	{
-21	    char test[] = "123456789";  
-22	    ft_memcpy(test + 2, test, 9);
-23	    printf("%s\n", test);
-24	    return (0);
-25	} */

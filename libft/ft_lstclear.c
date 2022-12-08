@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 10:06:31 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/12/07 21:10:57 by pcosta-s         ###   ########.fr       */
+/*   Created: 2022/12/07 18:15:45 by pcosta-s          #+#    #+#             */
+/*   Updated: 2022/12/07 21:14:04 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char	*new_str;
-	size_t	i;
+	t_list	*temp;
 
-	i = 0;
-	new_str = (char *)malloc(sizeof(char) * ft_strlen(s1) + 1);
-	if (!new_str)
-		return (NULL);
-	while (s1[i])
+	while (*lst)
 	{
-		new_str[i] = s1[i];
-		i++;
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, (del));
+		*lst = temp;
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	*lst = NULL;
 }

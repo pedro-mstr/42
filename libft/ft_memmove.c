@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcosta-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 15:38:22 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/11/10 15:38:24 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/12/07 21:16:01 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	else
 		return (ft_memcpy(dest, src, n));
 }
-
-/* int main()
-20	{
-21	    char test[] = "123456789";  
-22	    ft_memmove(test + 2, test, 9);
-23	    printf("%s\n", test);
-24	    return (0);
-25	} */

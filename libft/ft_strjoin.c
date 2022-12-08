@@ -3,22 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pcosta-s <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 09:01:18 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/11/25 09:01:20 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/12/07 21:17:02 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/**
- * This function takes two strings and returns a new string 
- * that is the concatenation of the two strings
- * @param s1 The first string to be joined.
- * @param s2 The string to be appended to the end of s1.
- * @return A pointer to a new string that is the concatenation of s1 and s2.
- */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new_string;
