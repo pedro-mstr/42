@@ -6,7 +6,7 @@
 /*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 09:19:34 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/12/08 11:00:24 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/12/10 12:38:17 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 int	ft_lstsize(t_list *lst)
 {
 	int		list_size;
+	t_list	*temp;
 
+	temp = lst;
 	list_size = 0;
-	while (lst)
+	while (temp)
 	{
-		lst = lst -> next;
+		temp = temp -> next;
 		list_size++;
 	}
 	return (list_size);

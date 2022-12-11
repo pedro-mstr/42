@@ -6,7 +6,7 @@
 /*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 11:27:13 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/12/07 21:11:40 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/12/11 19:52:19 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	i;
 	size_t	j;
 
-	i = 0;
 	if (little[0] == '\0')
-		return ((char *)&big[i]);
-	if (len == 0)
-		return (NULL);
+		return ((char *)big);
+	i = 0;
 	while (i < len && big[i])
 	{
 		j = 0;
@@ -35,5 +33,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

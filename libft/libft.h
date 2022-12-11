@@ -6,7 +6,7 @@
 /*   By: pcosta-s <pcosta-s@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 11:26:16 by pcosta-s          #+#    #+#             */
-/*   Updated: 2022/12/07 21:07:19 by pcosta-s         ###   ########.fr       */
+/*   Updated: 2022/12/10 11:21:27 by pcosta-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,15 @@
 typedef struct s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
 
+/** * It takes a list, applies a function to each element of the list, 
+ * and returns a new list with the results or NULL if malloc fails.
+ * @param lst The address of a pointer to a node.
+ * @param f The address of the function used to iterate on the list.
+ * @param del a function that frees the memory of the content of a link.
+ * @return A pointer to the first element of the new list. */
 t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 /** * Iterates list lst and applies the function f on the content of each node.
